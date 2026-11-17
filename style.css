@@ -75,13 +75,13 @@ p+p{margin-top:1em}
 
 /* Header */
 .header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:2px solid var(--ink)}
-.nav{display:flex;align-items:center;gap:16px;height:68px}
+.nav{display:flex;align-items:center;gap:16px;height:80px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
-.brand img{width:44px;height:44px}
+.brand img{width:62px;height:62px}
 .brand span{font-family:var(--title);font-weight:700;font-size:1.3rem;color:var(--ink);line-height:1}
 .brand small{display:block;font-family:var(--hand);font-size:.7rem;color:var(--teal-ink);font-weight:300;margin-top:5px}
 .menu-toggle{height:44px;padding:0 14px;border:2px solid var(--ink);border-radius:6px;background:var(--white);font:700 .95rem var(--body);color:var(--ink);cursor:pointer}
-.menu{position:fixed;inset:68px 0 auto 0;background:var(--paper);border-bottom:2px solid var(--ink);padding:10px 20px 26px;display:none;flex-direction:column}
+.menu{position:fixed;inset:80px 0 auto 0;background:var(--paper);border-bottom:2px solid var(--ink);padding:10px 20px 26px;display:none;flex-direction:column}
 .menu.open{display:flex}
 .menu a{padding:14px 0;border-bottom:1px dashed var(--rule);text-decoration:none;color:var(--ink);font-family:var(--title);font-weight:600;font-size:1.35rem}
 .menu .btn{margin-top:16px;font-family:var(--body);font-size:1rem;color:#fff;border:2px solid var(--ink)}
@@ -221,7 +221,11 @@ p+p{margin-top:1em}
 .info b{display:block;font-family:var(--title);font-weight:600;color:#fff;font-size:.9rem;text-transform:uppercase;letter-spacing:.1em}
 .info a{color:#fff}
 .map{margin-top:26px;border:2px dashed rgba(255,255,255,.35);aspect-ratio:16/10;display:grid;place-items:center;font-size:.92rem;text-align:center;padding:20px}
-.map iframe{width:100%;height:100%;border:0}
+.map{padding:0;border-style:solid}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.hours{border-collapse:collapse;margin-top:8px;width:100%;max-width:340px;font-size:.98rem}
+.hours th{text-align:left;font-weight:400;color:#C9D7EA;padding:3px 16px 3px 0}
+.hours td{color:#fff;font-weight:700;padding:3px 0;white-space:nowrap}
 .letter{border:2px solid var(--ink);box-shadow:8px 8px 0 #050f1d;color:var(--ink-soft)}
 .letter .lined-in{padding:27px 18px 28px 64px}
 .letter h3{font-family:var(--hand);font-weight:400;font-size:1.3rem;color:var(--blue);line-height:34px;margin:0}
@@ -243,7 +247,7 @@ p+p{margin-top:1em}
 .footer a:hover{text-decoration:underline}
 .f-grid{display:grid;gap:24px}
 .f-brand{display:flex;gap:14px;align-items:center}
-.f-brand img{width:58px;height:58px;background:#fff;border-radius:50%;padding:3px}
+.f-brand img{width:96px;height:96px}
 .f-brand b{font-family:var(--title);font-size:1.4rem;color:#fff;display:block;line-height:1.1}
 .footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px}
 .legal{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);display:flex;flex-direction:column;gap:6px;font-size:.84rem}
