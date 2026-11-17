@@ -192,14 +192,22 @@ p+p{margin-top:1em}
 .creds b{font-family:var(--title);font-weight:600;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.08em;font-size:.86rem;padding-top:3px}
 .todo{background:#FFF1C9;color:#7A4E00;padding:0 4px}
 
-/* Scuole */
-.schools-grid{display:grid;gap:36px}
-.big-num{font-family:var(--title);font-weight:700;font-size:7.5rem;line-height:1;color:var(--teal-ink);position:relative;display:inline-block;padding:14px 46px 10px}
-.big-num svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.school-list{list-style:none;counter-reset:sc;border-top:2px solid var(--ink)}
-.school-list li{counter-increment:sc;display:flex;align-items:baseline;flex-wrap:wrap;column-gap:6px;gap:14px;padding:13px 0;border-bottom:1px dashed var(--rule);color:var(--ink);font-weight:500}
-.school-list li::before{margin-right:8px;content:counter(sc);font-family:var(--hand);color:var(--blue);min-width:22px}
-.school-list small{color:var(--ink-soft);font-weight:400}
+/* Scuole: etichette del quaderno */
+.schools{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.schools-head{display:grid;gap:10px;margin-bottom:40px}
+.labels{list-style:none;display:grid;gap:22px}
+.label{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:16px 22px 18px;position:relative;box-shadow:5px 5px 0 var(--ink);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.label::before{content:"";position:absolute;inset:6px;border:1.5px solid var(--blue);border-radius:11px;pointer-events:none}
+.label:nth-child(3n+1){transform:rotate(-1deg)}
+.label:nth-child(3n+2){transform:rotate(.8deg)}
+.label:nth-child(3n){transform:rotate(-.4deg)}
+.label:hover{transform:rotate(0) translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.label-top{display:block;font-family:var(--title);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink);margin-top:8px}
+.label-line{display:block;font-size:1.25rem;font-weight:400;color:var(--blue);border-bottom:1.5px dotted var(--rule);padding:2px 0 4px;min-height:2.3em;line-height:1.7}
+.label-tbd{color:#B0A27A!important;font-size:1rem!important}
+.school-cta{display:inline-flex;flex-wrap:wrap;gap:4px 8px;margin-top:20px;background:var(--pencil);border:2px dashed var(--ink);border-radius:12px;padding:12px 18px;color:var(--ink);text-decoration:none;font-weight:500;box-shadow:4px 4px 0 var(--ink);transition:transform .2s var(--ease)}
+.school-cta span{font-family:var(--hand);font-weight:400}
+.school-cta:hover{transform:translate(-2px,-2px)}
 
 /* FAQ */
 .faq-list{border-top:2px solid var(--ink);margin-top:30px}
@@ -219,7 +227,11 @@ p+p{margin-top:1em}
 .info{list-style:none;margin-top:28px;border-top:1px solid rgba(255,255,255,.25)}
 .info li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.15)}
 .info b{display:block;font-family:var(--title);font-weight:600;color:#fff;font-size:.9rem;text-transform:uppercase;letter-spacing:.1em}
-.info a{color:#fff}
+.info a{color:#fff;text-decoration:none}
+.info a:hover{color:var(--pencil)}
+.hours tr.closed th,.hours tr.closed td{color:#8FA6C4;font-weight:400}
+.info .map{margin-top:18px}
+.map-link{display:inline-block;margin-top:10px;font-weight:700;font-size:.95rem}
 .map{margin-top:26px;border:2px dashed rgba(255,255,255,.35);aspect-ratio:16/10;display:grid;place-items:center;font-size:.92rem;text-align:center;padding:20px}
 .map{padding:0;border-style:solid}
 .map iframe{width:100%;height:100%;border:0;display:block}
@@ -244,6 +256,7 @@ p+p{margin-top:1em}
 /* Footer */
 .footer{background:var(--ink);color:#A9B8CB;padding:40px 0 90px;font-size:.92rem}
 .footer a{color:#fff;text-decoration:none}
+.footer a:hover{color:var(--pencil)}
 .footer a:hover{text-decoration:underline}
 .f-grid{display:grid;gap:24px}
 .f-brand{display:flex;gap:14px;align-items:center}
@@ -281,6 +294,7 @@ p+p{margin-top:1em}
   .group{break-inside:avoid}
   .tally{grid-template-columns:1fr auto;padding:20px 30px}
   .row2{grid-template-columns:1fr 1fr}
+  .labels{grid-template-columns:1fr 1fr}
   .f-grid{grid-template-columns:1fr auto;align-items:center}
   .legal{flex-direction:row;justify-content:space-between}
   .footer{padding-bottom:28px}
@@ -307,7 +321,8 @@ p+p{margin-top:1em}
   .stop{padding:76px 0 0}
   .stop::before{left:62px;right:-20px;top:25px;bottom:auto;border-left:0;border-top:3px dashed var(--teal)}
   .about-grid{grid-template-columns:.8fr 1.2fr;gap:90px;align-items:center}
-  .schools-grid{grid-template-columns:.6fr 1.4fr;gap:80px;align-items:start}
+  .schools-head{grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+  .labels{grid-template-columns:repeat(3,1fr);gap:30px}
   .faq-wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
   .faq-list{margin-top:0}
   .contact-grid{grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
